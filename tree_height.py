@@ -27,7 +27,7 @@ def main():
         if 'a' in file_name:
             return
         try:
-            with open(file_name, 'r') as f:
+            with open("./test/"+file_name, mode='r',encoding="utf8") as f:
                 n = int(f.readline())
                 parents = list(map(int, f.readline().split()))
         except FileNotFoundError:
