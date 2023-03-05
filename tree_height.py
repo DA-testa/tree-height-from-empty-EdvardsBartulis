@@ -11,7 +11,7 @@ def compute_height(n, parents):
     for i in range(n):
         heightA = 0
         current = i
-        while current!=1:
+        while current!=-1:
             if height[current]!=0:
                 heightA= heightA+height[current]
                 break
