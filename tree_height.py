@@ -4,7 +4,7 @@ import threading
 import numpy as np
 
 def compute_height(n, parents):
-   
+      
     max_height = 0
     height = np.zeros(n, dtype=np.int32)
     
@@ -38,8 +38,8 @@ def main():
             return
         try:
             with open("./test/"+file_name, mode='r',encoding="utf8") as f:
-                n = int(f.readline())
-                parents = list(map(int, f.readline().split()))
+                n = f.readline()
+                parents = np.array(s.split()).astype(int)
         except FileNotFoundError:
             return
     else:
