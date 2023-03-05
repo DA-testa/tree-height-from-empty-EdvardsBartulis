@@ -1,19 +1,28 @@
 # python3
 import sys
 import threading
+import numpy as np
 
 def compute_height(n, parents):
+   
+    max_height = 0
+    height = np.zeros(n, dtype=np.int32)
     
-    depths = [0] * n
-    queue = [-1]
-    while queue:
-        parent = queue.pop(0)
-        children = [i for i in range(n) if parents[i] == parent]
-        for child in children:
-            depths[child] = depths[parent] + 1
-            queue.append(child)
-            
-    return max(depths)
+    for i in range(n):
+        heightA = 0
+        current = i
+        while current!=1:
+            if height[current]!=0:
+                heightA= heightA+height[current]
+                break
+            else:
+                heightA = heightA + 1
+        height[i]=heightA
+        max_height = max(max_height, heightA)
+                
+        
+    return max_height
+ 
 
 def main():
 
