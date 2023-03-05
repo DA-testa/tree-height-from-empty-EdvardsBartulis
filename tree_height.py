@@ -17,6 +17,7 @@ def compute_height(n, parents):
                 break
             else:
                 heightA = heightA + 1
+            current = parents[current]         
         height[i]=heightA
         max_height = max(max_height, heightA)
                 
