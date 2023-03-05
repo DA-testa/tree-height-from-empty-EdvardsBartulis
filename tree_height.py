@@ -38,8 +38,9 @@ def main():
             return
         try:
             with open("./test/"+file_name, mode='r',encoding="utf8") as f:
-                n = f.readline()
-                parents = np.array(s.split()).astype(int)
+                n = int(f.readline())
+                n1 = f.readline()
+                parents = np.array(n1.split()).astype(int)
         except FileNotFoundError:
             return
     else:
